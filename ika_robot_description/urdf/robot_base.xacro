@@ -155,18 +155,8 @@
         <xacro:create_gazebo_mu_wheel_tag link_name="right_wheel_5" color="Orange" mu="0.001"/>
     </xacro:unless>
 
-
-    <!-- <gazebo reference="left_wheel_3">
-        <material>Gazebo/Yellow</material>
-        <mu1 value="1"></mu1>
-        <mu2 value="1"></mu2>
+    <gazebo reference="base_link">
+        <material>Gazebo/Green</material>
     </gazebo>
-
-    <gazebo reference="right_wheel_3">
-        <material>Gazebo/Orange</material>
-        <mu1 value="1"></mu1>
-        <mu2 value="1"></mu2>
-    </gazebo> -->
-
 
 </robot>
