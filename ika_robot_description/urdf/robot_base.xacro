@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
     
+    <xacro:arg name="enable_traction" default="true"/>
+
     <xacro:property name="base_length" value="1.2"/>
     <xacro:property name="base_width" value="0.7"/>
     <xacro:property name="base_hight" value=".2"/>
@@ -12,6 +14,12 @@
     <xacro:property name="wheel_number" value="5"/>
     <xacro:property name="base_to_ground" value="${2*wheel_radius}"/>
 
+    <xacro:if value="$(arg enable_traction)">
+        <xacro:property name="front_radius" value="0.2"/>
+    </xacro:if>
+    <xacro:unless value="$(arg enable_traction)">
+        <xacro:property name="front_radius" value="0.3"/>
+    </xacro:unless>
 
     <link name="base_footprint"/>
     <joint name="base_joint" type="fixed">
@@ -40,21 +48,21 @@
     </link>
 
     <!-- Left Wheels -->
-    <xacro:macro name="left_wheel" params="id">
+    <xacro:macro name="left_wheel" params="id radii">
         <link name="left_wheel_${id}">
             <visual>
                 <geometry>
-                    <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+                    <cylinder radius="${radii}" length="${wheel_length}"/>
                 </geometry>
-                <material name="blue"/>
+                <material name="yellow"/>
             </visual>
             <collision>
                 <geometry>
-                    <sphere radius="${wheel_radius}"/>
-                    <!-- <cylinder radius="${wheel_radius}" length="${wheel_length}"/> -->
+                    <sphere radius="${radii}"/>
+                    <!-- <cylinder radius="${radii}" length="${wheel_length}"/> -->
                 </geometry>
             </collision>
-            <xacro:cylinder_inertia m="${wheel_mass}" r="${wheel_length}" l = "${wheel_length}" 
+            <xacro:cylinder_inertia m="${wheel_mass}" r="${radii}" l = "${wheel_length}" 
                                     xyz="0 0 0" rpy="0 0 0"/>
         </link>
         <joint name="left_wheel_joint_${id}" type="continuous">
@@ -66,28 +74,28 @@
         </joint>
     </xacro:macro>
 
-    <xacro:left_wheel id="1"/>
-    <xacro:left_wheel id="2"/>
-    <xacro:left_wheel id="3"/>
-    <xacro:left_wheel id="4"/>
-    <xacro:left_wheel id="5"/>
+    <xacro:left_wheel id="1" radii="${front_radius}"/>
+    <xacro:left_wheel id="2" radii="${wheel_radius}"/>
+    <xacro:left_wheel id="3" radii="${wheel_radius}"/>
+    <xacro:left_wheel id="4" radii="${wheel_radius}"/>
+    <xacro:left_wheel id="5" radii="${front_radius}"/>
 
     <!-- Right Wheels -->
-    <xacro:macro name="right_wheel" params="id">
+    <xacro:macro name="right_wheel" params="id radii">
         <link name="right_wheel_${id}">
             <visual>
                 <geometry>
-                    <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+                    <cylinder radius="${radii}" length="${wheel_length}"/>
                 </geometry>
-                <material name="blue" />
+                <material name="orange" />
             </visual>
             <collision>
                 <geometry>
-                    <sphere radius="${wheel_radius}"/>
-                    <!-- <cylinder radius="${wheel_radius}" length="${wheel_length}"/> -->
+                    <sphere radius="${radii}"/>
+                    <!-- <cylinder radius="${radii}" length="${wheel_length}"/> -->
                 </geometry>
             </collision>
-            <xacro:cylinder_inertia m="${wheel_mass}" r="${wheel_length}" l = "${wheel_length}" 
+            <xacro:cylinder_inertia m="${wheel_mass}" r="${radii}" l = "${wheel_length}" 
                                     xyz="0 0 0" rpy="0 0 0"/>
         </link>
         <joint name="right_wheel_joint_${id}" type="continuous">
@@ -100,41 +108,55 @@
     </xacro:macro>
     
 
-    <xacro:right_wheel id="1"/>
-    <xacro:right_wheel id="2"/>
-    <xacro:right_wheel id="3"/>
-    <xacro:right_wheel id="4"/>
-    <xacro:right_wheel id="5"/>
+    <xacro:right_wheel id="1" radii="${front_radius}"/>
+    <xacro:right_wheel id="2" radii="${wheel_radius}"/>
+    <xacro:right_wheel id="3" radii="${wheel_radius}"/>
+    <xacro:right_wheel id="4" radii="${wheel_radius}"/>
+    <xacro:right_wheel id="5" radii="${front_radius}"/>
 
-    <xacro:macro name="create_gazebo_mu_001_wheel_tag" params="link_name color">
+    <xacro:macro name="create_gazebo_wheel_tag" params="link_name color">
         <gazebo reference="${link_name}">
             <material>Gazebo/${color}</material>
-            <mu1 value="0.001"></mu1>
-            <mu2 value="0.001"></mu2>
+            <mu1 value="1"></mu1>
+            <mu2 value="1"></mu2>
         </gazebo>
     </xacro:macro>
 
-    <xacro:macro name="create_gazebo_mu_05_wheel_tag" params="link_name color">
+    <xacro:macro name="create_gazebo_mu_wheel_tag" params="link_name color mu">
         <gazebo reference="${link_name}">
             <material>Gazebo/${color}</material>
-            <mu1 value="0.05"></mu1>
-            <mu2 value="0.05"></mu2>
+            <mu1 value="${mu}"></mu1>
+            <mu2 value="${mu}"></mu2>
         </gazebo>
     </xacro:macro>
 
-    <xacro:create_gazebo_mu_001_wheel_tag link_name="left_wheel_1" color="Yellow"/>
-    <xacro:create_gazebo_mu_001_wheel_tag link_name="right_wheel_1" color="Orange"/>
+    <xacro:if value="$(arg enable_traction)">
+        <xacro:create_gazebo_wheel_tag link_name="left_wheel_1" color="Yellow"/>
+        <xacro:create_gazebo_wheel_tag link_name="right_wheel_1" color="Orange"/>
+        <xacro:create_gazebo_wheel_tag link_name="left_wheel_2" color="Yellow"/>
+        <xacro:create_gazebo_wheel_tag link_name="right_wheel_2" color="Orange"/>
+        <xacro:create_gazebo_wheel_tag link_name="left_wheel_3" color="Yellow"/>
+        <xacro:create_gazebo_wheel_tag link_name="right_wheel_3" color="Orange"/>
+        <xacro:create_gazebo_wheel_tag link_name="left_wheel_4" color="Yellow"/>
+        <xacro:create_gazebo_wheel_tag link_name="right_wheel_4" color="Orange"/>
+        <xacro:create_gazebo_wheel_tag link_name="left_wheel_5" color="Yellow"/>
+        <xacro:create_gazebo_wheel_tag link_name="right_wheel_5" color="Orange"/>
+    </xacro:if>
+    <xacro:unless value="$(arg enable_traction)">
+        <xacro:create_gazebo_mu_wheel_tag link_name="left_wheel_1"  color="Yellow" mu="0.001"/>
+        <xacro:create_gazebo_mu_wheel_tag link_name="right_wheel_1" color="Orange" mu="0.001"/>
+        <xacro:create_gazebo_mu_wheel_tag link_name="left_wheel_2"  color="Yellow" mu="0.05"/>
+        <xacro:create_gazebo_mu_wheel_tag link_name="right_wheel_2" color="Orange" mu="0.05"/>
+        <xacro:create_gazebo_wheel_tag    link_name="left_wheel_3"  color="Yellow"   />
+        <xacro:create_gazebo_wheel_tag    link_name="right_wheel_3" color="Orange"   />
+        <xacro:create_gazebo_mu_wheel_tag link_name="left_wheel_4"  color="Yellow" mu="0.05"/>
+        <xacro:create_gazebo_mu_wheel_tag link_name="right_wheel_4" color="Orange" mu="0.05"/>
+        <xacro:create_gazebo_mu_wheel_tag link_name="left_wheel_5"  color="Yellow" mu="0.001"/>
+        <xacro:create_gazebo_mu_wheel_tag link_name="right_wheel_5" color="Orange" mu="0.001"/>
+    </xacro:unless>
 
-    <xacro:create_gazebo_mu_05_wheel_tag link_name="left_wheel_2" color="Yellow"/>
-    <xacro:create_gazebo_mu_05_wheel_tag link_name="right_wheel_2" color="Orange"/>
 
-    <xacro:create_gazebo_mu_05_wheel_tag link_name="left_wheel_4" color="Yellow"/>
-    <xacro:create_gazebo_mu_05_wheel_tag link_name="right_wheel_4" color="Orange"/>
-
-    <xacro:create_gazebo_mu_001_wheel_tag link_name="left_wheel_5" color="Yellow"/>
-    <xacro:create_gazebo_mu_001_wheel_tag link_name="right_wheel_5" color="Orange"/>
-
-    <gazebo reference="left_wheel_3">
+    <!-- <gazebo reference="left_wheel_3">
         <material>Gazebo/Yellow</material>
         <mu1 value="1"></mu1>
         <mu2 value="1"></mu2>
@@ -144,7 +166,7 @@
         <material>Gazebo/Orange</material>
         <mu1 value="1"></mu1>
         <mu2 value="1"></mu2>
-    </gazebo>
+    </gazebo> -->
 
 
 </robot>

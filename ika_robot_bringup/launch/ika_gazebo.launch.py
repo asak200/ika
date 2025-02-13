@@ -12,17 +12,20 @@ def generate_launch_description():
     ld = LaunchDescription()
 
     use_ros2_control = LaunchConfiguration('use_ros2_control', default=True)
+    enable_traction = LaunchConfiguration('enable_traction', default=True)
 
     urdf_file = os.path.join(get_package_share_path('ika_robot_description'),
                              'urdf', 'robot.xacro')
 
     gazebo_pkg = get_package_share_directory('gazebo_ros')
-    ika_robot_description_dir = get_package_share_directory('ika_robot_description')
+
+    world = os.path.join(get_package_share_directory('ika_robot_description'),
+                         'worlds', 'big_step.world')
 
     rviz_config = '/home/asak/ika/src/ika_robot_description/config/test_diffdrive.rviz'
 
 
-    robot_description = ParameterValue(Command(['xacro ', urdf_file, ' use_ros2_control:=', use_ros2_control]), value_type=str)
+    robot_description = ParameterValue(Command(['xacro ', urdf_file, ' use_ros2_control:=', use_ros2_control, ' enable_traction:=', enable_traction]), value_type=str)
     robot_state_publisher = Node(
         package='robot_state_publisher',
         executable='robot_state_publisher',
@@ -35,7 +38,7 @@ def generate_launch_description():
         PythonLaunchDescriptionSource(
             os.path.join(gazebo_pkg, 'launch', 'gazebo.launch.py')
         ),
-        # launch_arguments={'world': os.path.join("path to world share dir")}
+        launch_arguments={'world': world}.items()
     )
 
     spawner = Node(

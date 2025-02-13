@@ -4,11 +4,12 @@
     <xacro:macro name="create_joint_tag_ros2_cont" params="prefix">
         <joint name="${prefix}">
             <command_interface name="velocity">
-                <param name="max">10</param>
-                <param name="min">-10</param>
+                <param name="max">100</param>
+                <param name="min">-100</param>
             </command_interface>
             <state_interface name="velocity"/>
             <state_interface name="position"/>
+            <param name="max_effort">100</param>
         </joint>
     </xacro:macro>
 

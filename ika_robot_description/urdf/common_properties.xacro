@@ -13,6 +13,9 @@
     <material name="orange">
         <color rgba="1 0.3 0 1"/>
     </material>
+    <material name="yellow">
+        <color rgba="1 1 0 1"/>
+    </material>
 
     <xacro:macro name="sphere_inertia" params="m r xyz rpy">
         <inertial>
