@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:macro name="create_gazebo_wheel_tag" params="link_name color">
+        <gazebo reference="${link_name}">
+            <material>Gazebo/${color}</material>
+        </gazebo>
+    </xacro:macro>
+    
+    <xacro:macro name="create_gazebo_caster_wheel_tag" params="link_name color">
+        <gazebo reference="${link_name}">
+            <material>Gazebo/${color}</material>
+            <mu1 value="0.01"></mu1>
+            <mu2 value="0.01"></mu2>
+        </gazebo>
+    </xacro:macro>
+
+    <xacro:create_gazebo_wheel_tag link_name="base_link" color="Green"/>
+
+    <xacro:create_gazebo_caster_wheel_tag link_name="left_wheel_1" color="Orange"/>
+    <xacro:create_gazebo_caster_wheel_tag link_name="left_wheel_2" color="Yellow"/>
+    <xacro:create_gazebo_wheel_tag link_name="left_wheel_3" color="Orange"/>
+    <xacro:create_gazebo_caster_wheel_tag link_name="left_wheel_4" color="Yellow"/>
+    <xacro:create_gazebo_caster_wheel_tag link_name="right_wheel_1" color="Yellow"/>
+    <xacro:create_gazebo_caster_wheel_tag link_name="right_wheel_2" color="Orange"/>
+    <xacro:create_gazebo_wheel_tag link_name="right_wheel_3" color="Yellow"/>
+    <xacro:create_gazebo_caster_wheel_tag link_name="right_wheel_4" color="Orange"/>
+
+
+    <!-- GAZEBO DIFF DRIVE PLUGIN -->
+    <xacro:macro name="create_diffdrive_cont" params="id">
+    <gazebo>
+        <plugin name="diff_drive_controller_${id}" filename="libgazebo_ros_diff_drive.so">
+            <update_rate>50</update_rate>
+
+            <left_joint>left_wheel_joint_${id}</left_joint>
+
+            <right_joint>right_wheel_joint_${id}</right_joint>
+
+            <wheel_separation>${base_width+wheel_length}</wheel_separation>
+            <wheel_diameter>${2*wheel_radius}</wheel_diameter>
+
+            <!-- output -->
+            <publish_odom>true</publish_odom>
+            <publish_odom_tf>true</publish_odom_tf>
+            <publish_wheel_tf>true</publish_wheel_tf>
+
+            <odometry_topic>odom</odometry_topic>
+            <odometry_frame>odom</odometry_frame>
+            <robot_base_frame>base_footprint</robot_base_frame>
+        </plugin>
+    </gazebo>
+    </xacro:macro>
+    
+    <!-- <xacro:create_diffdrive_cont id="1" /> -->
+    <!-- <xacro:create_diffdrive_cont id="2" /> -->
+    <xacro:create_diffdrive_cont id="3" />
+    <!-- <xacro:create_diffdrive_cont id="4" /> -->
+
+
+    <!-- JOINT STATE PUBLISHER-->
+    <gazebo>
+        <plugin name="joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
+            <joint_name>left_wheel_joint_1</joint_name>
+            <joint_name>right_wheel_joint_1</joint_name>
+            <joint_name>left_wheel_joint_2</joint_name>
+            <joint_name>right_wheel_joint_2</joint_name>
+            <joint_name>left_wheel_joint_4</joint_name>
+            <joint_name>right_wheel_joint_4</joint_name>
+            <update_rate>30.</update_rate>
+        </plugin>
+    </gazebo>
+
+</robot>

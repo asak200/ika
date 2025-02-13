@@ -11,6 +11,8 @@ def generate_launch_description():
 
     urdf_file = os.path.join(get_package_share_path('ika_robot_description'),
                              'urdf', 'robot.xacro')
+    rviz_config = os.path.join('/home','asak','ika','src','ika_robot_description',
+                              'rviz', 'rviz_conf.rviz')
 
     robot_description = ParameterValue(Command(['xacro ', urdf_file]), value_type=str)
     robot_state_publisher = Node(
@@ -29,6 +31,7 @@ def generate_launch_description():
     rviz2 = Node(
         package='rviz2',
         executable='rviz2',
+        arguments=['-d', rviz_config]
     )
 
     ld.add_action(robot_state_publisher)

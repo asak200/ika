@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:macro name="create_joint_tag_ros2_cont" params="prefix">
+        <joint name="${prefix}">
+            <command_interface name="velocity">
+                <param name="max">10</param>
+                <param name="min">-10</param>
+            </command_interface>
+            <state_interface name="velocity"/>
+            <state_interface name="position"/>
+        </joint>
+    </xacro:macro>
+
+    <ros2_control name="GazedoSys" type="system">
+        <hardware>
+            <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+        </hardware>
+
+        <xacro:create_joint_tag_ros2_cont prefix="left_wheel_joint_1" />
+        <xacro:create_joint_tag_ros2_cont prefix="right_wheel_joint_1" />
+        <xacro:create_joint_tag_ros2_cont prefix="left_wheel_joint_2" />
+        <xacro:create_joint_tag_ros2_cont prefix="right_wheel_joint_2" />
+        <xacro:create_joint_tag_ros2_cont prefix="left_wheel_joint_3" />
+        <xacro:create_joint_tag_ros2_cont prefix="right_wheel_joint_3" />
+        <xacro:create_joint_tag_ros2_cont prefix="left_wheel_joint_4" />
+        <xacro:create_joint_tag_ros2_cont prefix="right_wheel_joint_4" />
+        <xacro:create_joint_tag_ros2_cont prefix="left_wheel_joint_5" />
+        <xacro:create_joint_tag_ros2_cont prefix="right_wheel_joint_5" />
+    </ros2_control>
+    
+    <!-- RESIZE TO A GOOD SHAPED ROBOT.
+         ADJUST THE FRICTION make it sphere -->
+
+    <gazebo>
+        <plugin name="gazebo_ros2_cont" filename="libgazebo_ros2_control.so">
+            <parameters>$(find ika_robot_description)/config/my_controllers.yaml</parameters>
+        </plugin>
+    </gazebo>
+
+</robot>
