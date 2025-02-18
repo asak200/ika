@@ -20,7 +20,7 @@ def generate_launch_description():
     gazebo_pkg = get_package_share_directory('gazebo_ros')
 
     world = os.path.join(get_package_share_directory('ika_robot_description'),
-                         'worlds', 'first_barrier.world')
+                         'worlds', 'tumsek_track.world')
 
     rviz_config = '/home/asak/ika/src/ika_robot_description/config/test_diffdrive.rviz'
 
@@ -46,8 +46,8 @@ def generate_launch_description():
         executable='spawn_entity.py', 
         arguments=['-entity', 'my_robot', 
                    '-topic', 'robot_description',
-                #    '-x', '-15', 
-                #    '-Y', '3.1416'
+                   '-x', '11', '-y', '-8.5', '-z', '0.5',
+                   '-Y', '3.1416'
                    ],
         output='screen'
     )
