@@ -875,112 +875,114 @@ from random import randint, random
 
 
 ### Create tumsek
-final_text = """<?xml version='1.0'?>
-<sdf version='1.7'>
-  <model name='rocks'>
-    <static>1</static>
-    <pose>0 0 0.5 0 0 0</pose>
-"""
-og_text = """    <link name='tumsek_main_NUMBER'>
-      <pose>POSE_X POSE_Y 0 0 0 0</pose>
-      <collision name='tumsek_Collision'>
-        <geometry>
-          <box>
-            <size>0.1 0.4 0.05</size>
-          </box>
-        </geometry>
-        <pose>0 0 0.025 0 -0 0</pose>
-      </collision>
-      <visual name='tumsek_Visual'>
-        <pose>0 0 0.025 0 -0 0</pose>
-        <geometry>
-          <box>
-            <size>0.1 0.4 0.05</size>
-          </box>
-        </geometry>
-        <material>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Bricks</name>
-          </script>
-          <ambient>1 1 1 1</ambient>
-        </material>
-        <meta>
-          <layer>0</layer>
-        </meta>
-      </visual>
-    </link>
-    <link name='tumsek_front_NUMBER'>
-      <pose>POSE_fX POSE_fY 0 0 0.785 0</pose>
-      <collision name='tumsek_Collision'>
-        <geometry>
-          <box>
-            <size>0.0707 0.4 0.0707</size>
-          </box>
-        </geometry>
-        <pose>0 0 0 0 -0 0</pose>
-      </collision>
-      <visual name='tumsek_Visual'>
-        <pose>0 0 0 0 -0 0</pose>
-        <geometry>
-          <box>
-            <size>0.0707 0.4 0.0707</size>
-          </box>
-        </geometry>
-        <material>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Bricks</name>
-          </script>
-          <ambient>1 1 1 1</ambient>
-        </material>
-      </visual>
-    </link>
-    <link name='tumsek_back_NUMBER'>
-      <pose>POSE_bX POSE_bY 0 0 0.785 0</pose>
-      <collision name='tumsek_Collision'>
-        <geometry>
-          <box>
-            <size>0.0707 0.4 0.0707</size>
-          </box>
-        </geometry>
-        <pose>0 0 0 0 -0 0</pose>
-      </collision>
-      <visual name='tumsek_Visual'>
-        <pose>0 0 0 0 -0 0</pose>
-        <geometry>
-          <box>
-            <size>0.0707 0.4 0.0707</size>
-          </box>
-        </geometry>
-        <material>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Bricks</name>
-          </script>
-          <ambient>1 1 1 1</ambient>
-        </material>
-      </visual>
-    </link>
-"""
+# final_text = """<?xml version='1.0'?>
+# <sdf version='1.7'>
+#   <model name='rocks'>
+#     <static>1</static>
+#     <pose>0 0 0.5 0 0 0</pose>
+# """
+# og_text = """    <link name='tumsek_main_NUMBER'>
+#       <pose>POSE_X POSE_Y 0 0 0 0</pose>
+#       <collision name='tumsek_Collision'>
+#         <geometry>
+#           <box>
+#             <size>0.1 0.4 0.05</size>
+#           </box>
+#         </geometry>
+#         <pose>0 0 0.025 0 -0 0</pose>
+#       </collision>
+#       <visual name='tumsek_Visual'>
+#         <pose>0 0 0.025 0 -0 0</pose>
+#         <geometry>
+#           <box>
+#             <size>0.1 0.4 0.05</size>
+#           </box>
+#         </geometry>
+#         <material>
+#           <script>
+#             <uri>file://media/materials/scripts/gazebo.material</uri>
+#             <name>Gazebo/Bricks</name>
+#           </script>
+#           <ambient>1 1 1 1</ambient>
+#         </material>
+#         <meta>
+#           <layer>0</layer>
+#         </meta>
+#       </visual>
+#     </link>
+#     <link name='tumsek_front_NUMBER'>
+#       <pose>POSE_fX POSE_fY 0 0 0.785 0</pose>
+#       <collision name='tumsek_Collision'>
+#         <geometry>
+#           <box>
+#             <size>0.0707 0.4 0.0707</size>
+#           </box>
+#         </geometry>
+#         <pose>0 0 0 0 -0 0</pose>
+#       </collision>
+#       <visual name='tumsek_Visual'>
+#         <pose>0 0 0 0 -0 0</pose>
+#         <geometry>
+#           <box>
+#             <size>0.0707 0.4 0.0707</size>
+#           </box>
+#         </geometry>
+#         <material>
+#           <script>
+#             <uri>file://media/materials/scripts/gazebo.material</uri>
+#             <name>Gazebo/Bricks</name>
+#           </script>
+#           <ambient>1 1 1 1</ambient>
+#         </material>
+#       </visual>
+#     </link>
+#     <link name='tumsek_back_NUMBER'>
+#       <pose>POSE_bX POSE_bY 0 0 0.785 0</pose>
+#       <collision name='tumsek_Collision'>
+#         <geometry>
+#           <box>
+#             <size>0.0707 0.4 0.0707</size>
+#           </box>
+#         </geometry>
+#         <pose>0 0 0 0 -0 0</pose>
+#       </collision>
+#       <visual name='tumsek_Visual'>
+#         <pose>0 0 0 0 -0 0</pose>
+#         <geometry>
+#           <box>
+#             <size>0.0707 0.4 0.0707</size>
+#           </box>
+#         </geometry>
+#         <material>
+#           <script>
+#             <uri>file://media/materials/scripts/gazebo.material</uri>
+#             <name>Gazebo/Bricks</name>
+#           </script>
+#           <ambient>1 1 1 1</ambient>
+#         </material>
+#       </visual>
+#     </link>
+# """
 
-for i in range(60):
-    text = og_text.replace('NUMBER', str(i))
-    text = text.replace('NUMBER', str(i))
-    text = text.replace('NUMBER', str(i))
+# for i in range(60):
+#     text = og_text.replace('NUMBER', str(i))
+#     text = text.replace('NUMBER', str(i))
+#     text = text.replace('NUMBER', str(i))
 
-    pose_x = random()*9.8-4.9
-    pose_y = random()*2.6-1.3
-    text = text.replace('POSE_X', str(pose_x))
-    text = text.replace('POSE_Y', str(pose_y))
-    text = text.replace('POSE_fX', str(pose_x + 0.05))
-    text = text.replace('POSE_fY', str(pose_y))
-    text = text.replace('POSE_bX', str(pose_x - 0.05))
-    text = text.replace('POSE_bY', str(pose_y))
-    final_text += text
+#     pose_x = random()*9.8-4.9
+#     pose_y = random()*2.6-1.3
+#     text = text.replace('POSE_X', str(pose_x))
+#     text = text.replace('POSE_Y', str(pose_y))
+#     text = text.replace('POSE_fX', str(pose_x + 0.05))
+#     text = text.replace('POSE_fY', str(pose_y))
+#     text = text.replace('POSE_bX', str(pose_x - 0.05))
+#     text = text.replace('POSE_bY', str(pose_y))
+#     final_text += text
 
 
-final_text+= """  </model>
-</sdf>"""
-with open('/home/asak/building_editor_models/tumsek/model.sdf', 'w') as file:
-    file.write(final_text)
+# final_text+= """  </model>
+# </sdf>"""
+# with open('/home/asak/building_editor_models/tumsek/model.sdf', 'w') as file:
+#     file.write(final_text)
+
+### Problem solving

@@ -21,6 +21,8 @@ setup(
     entry_points={
         'console_scripts': [
             'centering_controller = ika_camera.centering_controller:main',
+            'dummy_pclaud_listener = ika_camera.dummy_pclaud_listener:main',
+            'cmd_pub = ika_camera.cmd_pub:main',
         ],
     },
 )

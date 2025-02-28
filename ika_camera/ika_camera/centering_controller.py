@@ -22,7 +22,7 @@ class MyNode(Node):
         self.pub_cmd_vel = self.get_parameter('pub_cmd_vel').value
         
         self.cv_bridge = CvBridge()
-        self.kp = .2
+        self.kp = .3
         self.angle_x = 0
 
         self.cmd_vel_publisher_ = self.create_publisher(Twist, 'diff_cont/cmd_vel_unstamped', 10)
@@ -54,11 +54,10 @@ class MyNode(Node):
         # self.get_logger().info(str(img.shape[0]))
         # self.get_logger().info('x= ' + str(x))
         # self.get_logger().info('y= ' + str(y))
-
         
         # Publish velocity
         cmd_vel = Twist()
-        cmd_vel.linear.x = 1.5
+        cmd_vel.linear.x = 1.2
         if left < 1.5 or right < 1.5:
             angular_z = error * self.kp
             cmd_vel.angular.z = angular_z
@@ -99,9 +98,9 @@ class MyNode(Node):
 
     def imu_callback(self, msg: Imu):
         q: Quaternion = msg.orientation
-        x = euler_from_quaternion([q.x, q.y, q.z, q.w])[0]
-        self.angle_x = x
-        # print(math.degrees(x))
+        angles = euler_from_quaternion([q.x, q.y, q.z, q.w])
+        self.angle_x = angles[0]
+        print(math.degrees(angles[2]))
 
 
 def main(args=None):

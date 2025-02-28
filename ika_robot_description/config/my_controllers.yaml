@@ -25,16 +25,16 @@ diff_cont:
 
     # open_loop: false    
 
-    # wheels_per_side: x
+    wheels_per_side: 5
     # wheel_separation_multiplier: x
     # left_wheel_radius_multiplier: x
     # right_wheel_radius_multiplier: x
 
-    # odom_frame_id: x
+    # odom_frame_id: 'not_odom'
     # pose_covariance_diagonal: x
     # twist_covariance_diagonal: x
     # open_loop: x
-    # enable_odom_tf: x
+    enable_odom_tf: false
 
     # cmd_vel_timeout: x
     # publish_limited_velocity: x

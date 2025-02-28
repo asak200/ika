@@ -17,14 +17,16 @@
 
     <xacro:create_gazebo_wheel_tag link_name="base_link" color="Green"/>
 
-    <xacro:create_gazebo_caster_wheel_tag link_name="left_wheel_1" color="Orange"/>
+    <xacro:create_gazebo_caster_wheel_tag link_name="left_wheel_1" color="Yellow"/>
     <xacro:create_gazebo_caster_wheel_tag link_name="left_wheel_2" color="Yellow"/>
-    <xacro:create_gazebo_wheel_tag link_name="left_wheel_3" color="Orange"/>
+    <xacro:create_gazebo_wheel_tag link_name="left_wheel_3" color="Yellow"/>
     <xacro:create_gazebo_caster_wheel_tag link_name="left_wheel_4" color="Yellow"/>
-    <xacro:create_gazebo_caster_wheel_tag link_name="right_wheel_1" color="Yellow"/>
+    <xacro:create_gazebo_caster_wheel_tag link_name="left_wheel_5" color="Yellow"/>
+    <xacro:create_gazebo_caster_wheel_tag link_name="right_wheel_1" color="Orange"/>
     <xacro:create_gazebo_caster_wheel_tag link_name="right_wheel_2" color="Orange"/>
-    <xacro:create_gazebo_wheel_tag link_name="right_wheel_3" color="Yellow"/>
+    <xacro:create_gazebo_wheel_tag link_name="right_wheel_3" color="Orange"/>
     <xacro:create_gazebo_caster_wheel_tag link_name="right_wheel_4" color="Orange"/>
+    <xacro:create_gazebo_caster_wheel_tag link_name="right_wheel_5" color="Orange"/>
 
 
     <!-- GAZEBO DIFF DRIVE PLUGIN -->
@@ -67,6 +69,8 @@
             <joint_name>right_wheel_joint_2</joint_name>
             <joint_name>left_wheel_joint_4</joint_name>
             <joint_name>right_wheel_joint_4</joint_name>
+            <joint_name>left_wheel_joint_5</joint_name>
+            <joint_name>right_wheel_joint_5</joint_name>
             <update_rate>30.</update_rate>
         </plugin>
     </gazebo>
