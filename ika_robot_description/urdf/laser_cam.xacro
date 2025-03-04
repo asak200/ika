@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+    <xacro:property name="laser_base_radius" value="0.1" />
+    <xacro:property name="laser_base_length" value="0.05" />
+    <xacro:property name="laser_holder_x" value="0.02"/>
+    <xacro:property name="laser_holder_y" value="${laser_base_radius}"/>
+    <xacro:property name="laser_holder_z" value="0.15"/>
+
+    <!-- DUMMY LINK -->
+    <link name="dummy_link"/>
+    
+    <!-- LASER BASE -->
+    <joint name="laser_base_joint" type="fixed" >
+        <parent link="dummy_link" />
+        <child link="laser_base" />
+        <origin xyz="0 0 0.5" />
+    </joint>
+    <link name="laser_base">
+        <xacro:cylinder_inertia m="0.2" l="${laser_base_length}" r="${laser_base_radius}" 
+                                xyz="0 0 ${laser_base_length/2}" rpy="0 0 0"/>
+    </link>
+
+    <!-- LASER BASE LINK -->
+    <joint name="laser_rev_joint" type="revolute">
+        <parent link="laser_base" />
+        <child link="laser_base_link" />
+        <origin xyz="0 0 0" />
+        <limit lower="${-pi/2}" upper="${pi/2}" effort="100" velocity="100"/>
+        <axis  xyz="0 0 1"/>
+        <dynamics friction="5."></dynamics>
+    </joint>
+    <link name="laser_base_link">
+        <visual>
+            <geometry>
+                <cylinder radius="${laser_base_radius}" length="${laser_base_length}"/>
+            </geometry>
+            <origin xyz="0 0 ${laser_base_length/2}"/>
+            <material name="yellow"/>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="${laser_base_radius}" length="${laser_base_length}"/>
+            </geometry>
+            <origin xyz="0 0 ${laser_base_length/2}"/>
+        </collision>
+        <xacro:cylinder_inertia m="0.2" l="${laser_base_length}" r="${laser_base_radius}" 
+                                xyz="0 0 ${laser_base_length/2}" rpy="0 0 0"/>
+    </link>
+    <gazebo reference="laser_base_link">
+        <material>Gazebo/Yellow</material>
+    </gazebo>
+
+    <!-- TEST -->
+    <joint name="laser_holder_joint" type="revolute">
+        <parent link="laser_base_link" />
+        <child link="laser_holder" />
+        <origin xyz="0 0 ${laser_base_length}" />
+        <limit lower="${-pi/2}" upper="${pi/2}" effort="100" velocity="100"/>
+        <axis  xyz="0 1 0"/>
+        <dynamics friction="5."></dynamics>
+    </joint>
+    <link name="laser_holder">
+        <visual>
+            <geometry>
+                <box size="${laser_holder_x} ${laser_holder_y} ${laser_holder_z}"/>
+            </geometry>
+            <origin xyz="0 0 ${laser_holder_z/2}"/>
+            <material name="orange"/>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="${laser_holder_x} ${laser_holder_y} ${laser_holder_z}"/>
+            </geometry>
+            <origin xyz="0 0 ${laser_holder_z/2}"/>
+        </collision>
+        <xacro:box_inertia m="0.2" l="${laser_holder_x}" w="${laser_holder_y}" h="${laser_holder_z}" 
+                                xyz="0 0 ${laser_holder_z/2}" rpy="0 0 0"/>
+    </link>
+    <gazebo reference="laser_holder">
+        <material>Gazebo/Orange</material>
+    </gazebo>
+    
+    <!-- CAMERA LINK -->
+    <joint name="laser_camera_joint" type="fixed">
+        <parent link="laser_holder"/>
+        <child link="laser_camera_link"/>
+        <origin xyz="${laser_holder_x/2 + 0.005} 0 ${laser_holder_z/2}" rpy="0 0 0"/>
+    </joint>
+
+    <link name="laser_camera_link">
+        <visual>
+            <geometry>
+                <box size="0.01 0.03 0.03"/>
+            </geometry>
+            <material name="red"/>
+        </visual>
+    </link>
+
+    <!-- GAZEBO STUFF -->
+    <joint name="laser_camera_optical_joint" type="fixed">
+        <parent link="laser_camera_link"/>
+        <child link="laser_camera_link_optical"/>
+        <origin xyz="0 0 0" rpy="${-pi/2} 0 ${-pi/2}"/>
+    </joint>
+    <link name="laser_camera_link_optical"></link>
+
+    <gazebo reference="laser_camera_link">
+        <material>Gazebo/Red</material>
+        <sensor name="camera" type="camera">
+            <pose>0 0 0 0 0 0</pose>
+            <visualize>true</visualize>
+            <update_rate>10.</update_rate>
+            
+            <camera>
+                <horizontal_fov>1.089</horizontal_fov>
+                <image>
+                    <format>R8G8B8</format>
+                    <width>640</width>
+                    <height>480</height>
+                </image>
+                <clip>
+                    <near>0.05</near>
+                    <far>8.0</far>
+                </clip>
+            </camera>
+
+            <plugin name="laser_camera_driver_gazebo" filename="libgazebo_ros_camera.so">
+                <frame_name>laser_camera_link_optical</frame_name>
+            </plugin>
+        </sensor>
+    </gazebo>
+
+
+    <gazebo>
+        <plugin name="joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
+            <joint_name>laser_rev_joint</joint_name>
+            <joint_name>laser_holder_joint</joint_name>
+            <update_rate>10.</update_rate>
+        </plugin>
+    </gazebo>
+
+    <gazebo>
+        <plugin name="pose_trajectory" filename="libgazebo_ros_joint_pose_trajectory.so">
+            <update_rate>2.</update_rate>
+        </plugin>
+    </gazebo>
+
+</robot>
+<!-- 
+ros2 topic pub -1 /set_joint_trajectory trajectory_msgs/msg/JointTrajectory '{header: {frame_id: dummy_link}, joint_names: [laser_rev_joint, laser_holder_joint], points: [ {positions: {1., 1.}} ]}'
+ -->

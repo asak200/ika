@@ -90,68 +90,68 @@
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
     <state world_name='default'>
-      <sim_time>2581 141000000</sim_time>
-      <real_time>1290 244677617</real_time>
-      <wall_time>1740758004 437749371</wall_time>
-      <iterations>1275000</iterations>
+      <sim_time>4979 47000000</sim_time>
+      <real_time>1138 911794557</real_time>
+      <wall_time>1741075162 423818948</wall_time>
+      <iterations>1133993</iterations>
       <model name='Construction Cone'>
-        <pose>12.2335 0.940615 0.5 0 -2e-06 0.53311</pose>
+        <pose>12.2335 0.940615 0.499991 2e-06 -0 0.53311</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>12.2335 0.940615 0.5 0 -2e-06 0.53311</pose>
+          <pose>12.2335 0.940615 0.499991 2e-06 -0 0.53311</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>1e-06 1e-06 4.37811 0.169358 0.969967 -3.14159</acceleration>
-          <wrench>1e-06 1e-06 4.37811 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -9.8 0 -0 0</wrench>
         </link>
       </model>
       <model name='Construction Cone_clone'>
-        <pose>12.812 3.45424 0.5 0 -0 0.53311</pose>
+        <pose>12.812 3.45424 0.5 1e-06 -1e-06 0.53311</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>12.812 3.45424 0.5 0 -0 0.53311</pose>
+          <pose>12.812 3.45424 0.5 1e-06 -1e-06 0.53311</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>-0 0 -0.390262 -1.72184 -1.07377 0</acceleration>
-          <wrench>-0 0 -0.390262 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -9.8 0 -0 0</wrench>
         </link>
       </model>
       <model name='Construction Cone_clone_clone'>
-        <pose>15.7323 5.08056 0.5 0 1e-06 0.53311</pose>
+        <pose>15.7323 5.08056 0.499991 -1e-06 -3e-06 0.53311</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>15.7323 5.08056 0.5 0 1e-06 0.53311</pose>
+          <pose>15.7323 5.08056 0.499991 -1e-06 -3e-06 0.53311</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 -0 -0.180567 -0.616724 1.05923 0</acceleration>
-          <wrench>0 -0 -0.180567 0 -0 0</wrench>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -9.8 0 -0 0</wrench>
         </link>
       </model>
       <model name='Construction Cone_clone_clone_0'>
-        <pose>13.8286 7.66695 0.499992 -1e-06 1e-06 0.53311</pose>
+        <pose>13.8286 7.66695 0.499991 5e-06 -0 0.53311</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>13.8286 7.66695 0.499992 -1e-06 1e-06 0.53311</pose>
+          <pose>13.8286 7.66695 0.499991 5e-06 -0 0.53311</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 -9.8 0 -0 0</acceleration>
           <wrench>0 0 -9.8 0 -0 0</wrench>
         </link>
       </model>
       <model name='Construction Cone_clone_clone_0_clone'>
-        <pose>14.2556 10.3539 0.5 1e-06 -0 0.639347</pose>
+        <pose>14.2556 10.3539 0.5 0 -0 0.639347</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>14.2556 10.3539 0.5 1e-06 -0 0.639347</pose>
+          <pose>14.2556 10.3539 0.5 0 -0 0.639347</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>-0 1e-06 19.1018 0.098841 1.36004 3e-06</acceleration>
-          <wrench>-0 1e-06 19.1018 0 -0 0</wrench>
+          <acceleration>0 0 0.246353 -2.38118 0.851325 -3.14159</acceleration>
+          <wrench>0 0 0.246353 0 -0 0</wrench>
         </link>
       </model>
       <model name='Construction Cone_clone_clone_1'>
-        <pose>9.98757 2.15165 0.5 0 1e-06 0.53311</pose>
+        <pose>9.98757 2.15165 0.5 0 -0 0.53311</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>9.98757 2.15165 0.5 0 1e-06 0.53311</pose>
+          <pose>9.98757 2.15165 0.5 0 -0 0.53311</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 -0.155496 -1.02698 0.73048 0</acceleration>
-          <wrench>0 0 -0.155496 0 -0 0</wrench>
+          <acceleration>-0 -0 0.155496 1.02698 -0.73048 0</acceleration>
+          <wrench>-0 -0 0.155496 0 -0 0</wrench>
         </link>
       </model>
       <model name='dik'>
@@ -969,6 +969,96 @@
         </link>
         <link name='yan'>
           <pose>-7.02778 -8.4987 0.3 0.197 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='sign1'>
+        <pose>9 -7.15 0.7 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>9 -7.15 0.7 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='sign12'>
+        <pose>10 23 0.5 0 -0 3.14</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>10 23 0.5 0 -0 3.14</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='sign2'>
+        <pose>5.5 -7 0.6 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>5.5 -7 0.6 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='sign3'>
+        <pose>-4 -7 0.7 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-4 -7 0.7 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='sign4'>
+        <pose>-10 3 0.5 0 -0 3.14</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-10 3 0.5 0 -0 3.14</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='sign5'>
+        <pose>10 3 0.5 0 -0 3.14</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>10 3 0.5 0 -0 3.14</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='sign6'>
+        <pose>9 13 0.5 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>9 13 0.5 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='sign7'>
+        <pose>0 13 0.5 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-0 13 0.5 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='sign8'>
+        <pose>-10 23 0.5 0 -0 3.14</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-10 23 0.5 0 -0 3.14</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -2059,7 +2149,7 @@
         </link>
       </model>
       <model name='water'>
-        <pose>5 2 0 0 -0 0</pose>
+        <pose>4.97378 11.4926 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='first_part'>
           <pose>9.47378 11.4926 0 0 -0 0</pose>
@@ -2095,16 +2185,37 @@
       <light name='sun'>
         <pose>0 0 10 0 -0 0</pose>
       </light>
+      <light name='user_spot_light_0'>
+        <pose>8.86261 3 2 0 -1.57 0</pose>
+      </light>
+      <light name='user_spot_light_0_clone'>
+        <pose>10.152 -7.12534 2.20053 0 1.57 0</pose>
+      </light>
+      <light name='user_spot_light_0_clone_clone'>
+        <pose>-1.3041 -7.15663 2.19383 0 1.57 0</pose>
+      </light>
+      <light name='user_spot_light_1'>
+        <pose>-11.6288 3 2.00089 0 -1.57 0</pose>
+      </light>
+      <light name='user_spot_light_2'>
+        <pose>10 13 2 0 1.57 0</pose>
+      </light>
+      <light name='user_spot_light_3'>
+        <pose>-11 23 2 0 -1.57 0</pose>
+      </light>
+      <light name='user_spot_light_3_clone'>
+        <pose>8.57534 22.992 2.00001 0 -1.57 0</pose>
+      </light>
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>15.2423 5.96819 19.4426 -1.5e-05 1.5698 1.56998</pose>
+        <pose>1.30411 -29.5538 28.124 0 0.698203 1.5651</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
     </gui>
     <model name='ika'>
-      <pose>0.15 1.5 0 0 -0 0</pose>
+      <pose>0 -8.5 0 0 -0 0</pose>
       <static>1</static>
       <link name='Wall_1_0'>
         <collision name='Wall_4_Collision'>
@@ -6230,7 +6341,7 @@
       </link>
     </model>
     <model name='ika2'>
-      <pose>0.016668 1.49103 0 0 -0 0</pose>
+      <pose>0 1.5 0 0 -0 0</pose>
       <static>1</static>
       <link name='straight_2'>
         <pose>0 0 0 0 -0 0</pose>
@@ -6678,6 +6789,7 @@
     </model>
     <model name='dik'>
       <static>1</static>
+      <pose>7.75 -8.5 0.5 0 -0 0</pose>
       <link name='dik'>
         <collision name='dik_Collision'>
           <geometry>
@@ -6725,7 +6837,7 @@
     </model>
     <model name='tumsek'>
       <static>1</static>
-      <pose>-5.17447 11.4027 0.5 0 -0 0</pose>
+      <pose>-5 11.5 0.5 0 -0 0</pose>
       <link name='tumsek_main_0'>
         <pose>0.442808 -0.537221 0 0 -0 0</pose>
         <collision name='tumsek_Collision'>
@@ -14730,7 +14842,7 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose>10.2404 0.673349 0 0 -0 0</pose>
+      <pose>12.2335 0.940615 0.5 0 -0 0.53311</pose>
     </model>
     <model name='Construction Cone_clone'>
       <link name='link'>
@@ -14977,5 +15089,473 @@
       </link>
       <pose>9.98757 2.15165 0.500001 0 3e-06 0.53311</pose>
     </model>
+    <model name='sign1'>
+      <pose>9 -7.15 0.7 0 -0 0</pose>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://signs/sign_1/meshs/sign1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://signs/sign_1/meshs/sign1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='sign2'>
+      <pose>5.5 -7 0.6 0 -0 0</pose>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://signs/sign_2/meshs/sign2.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://signs/sign_2/meshs/sign2.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='sign3'>
+      <pose>-4 -7 0.7 0 -0 0</pose>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://signs/sign_3/meshs/sign3.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://signs/sign_3/meshs/sign3.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='sign4'>
+      <static>1</static>
+      <pose>-10 3 0.5 0 -0 3.14</pose>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://signs/sign_4/meshs/sign4.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://signs/sign_4/meshs/sign4.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='sign5'>
+      <static>1</static>
+      <pose>10 3 0.5 0 -0 3.14</pose>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://signs/sign_5/meshs/sign5.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://signs/sign_5/meshs/sign5.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='sign6'>
+      <static>1</static>
+      <pose>9 13 0.5 0 -0 0</pose>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://signs/sign_6/meshs/sign6.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://signs/sign_6/meshs/sign6.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='sign7'>
+      <static>1</static>
+      <pose>-0 13 0.5 0 -0 0</pose>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://signs/sign_7/meshs/sign7.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://signs/sign_7/meshs/sign7.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='sign8'>
+      <static>1</static>
+      <pose>-10 23 0.5 0 -0 3.14</pose>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://signs/sign_8/meshs/sign8.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://signs/sign_8/meshs/sign8.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <model name='sign12'>
+      <static>1</static>
+      <pose>10 23 0.5 0 -0 3.14</pose>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://signs/sign_12/meshs/sign12.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://signs/sign_12/meshs/sign12.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <light name='user_spot_light_0' type='spot'>
+      <pose>8.86261 3 2 0 -1.57 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <direction>0 0 -1</direction>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+      <spot>
+        <inner_angle>0.6</inner_angle>
+        <outer_angle>1</outer_angle>
+        <falloff>1</falloff>
+      </spot>
+    </light>
+    <light name='user_spot_light_0_clone' type='spot'>
+      <pose>10.152 -7.12534 2.20053 0 1.57 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.0980392 0.0980392 0.0980392 1</specular>
+      <direction>0 0 -1</direction>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+      <spot>
+        <inner_angle>0.6</inner_angle>
+        <outer_angle>1</outer_angle>
+        <falloff>1</falloff>
+      </spot>
+    </light>
+    <light name='user_spot_light_0_clone_clone' type='spot'>
+      <pose>-1.3041 -7.15663 2.19383 0 1.57 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.0941176 0.0941176 0.0941176 1</specular>
+      <direction>0 0 -1</direction>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+      <spot>
+        <inner_angle>0.6</inner_angle>
+        <outer_angle>1</outer_angle>
+        <falloff>1</falloff>
+      </spot>
+    </light>
+    <light name='user_spot_light_1' type='spot'>
+      <pose>-11.6288 3 2.00089 0 -1.57 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <direction>0 0 -1</direction>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+      <spot>
+        <inner_angle>0.6</inner_angle>
+        <outer_angle>1</outer_angle>
+        <falloff>1</falloff>
+      </spot>
+    </light>
+    <light name='user_spot_light_2' type='spot'>
+      <pose>10 13 2 0 1.57 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <direction>0 0 -1</direction>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+      <spot>
+        <inner_angle>0.6</inner_angle>
+        <outer_angle>1</outer_angle>
+        <falloff>1</falloff>
+      </spot>
+    </light>
+    <light name='user_spot_light_3' type='spot'>
+      <pose>-11 23 2 0 -1.57 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <direction>0 0 -1</direction>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+      <spot>
+        <inner_angle>0.6</inner_angle>
+        <outer_angle>1</outer_angle>
+        <falloff>1</falloff>
+      </spot>
+    </light>
+    <light name='user_spot_light_3_clone' type='spot'>
+      <pose>8.57534 22.992 2.00001 0 -1.57 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.0980392 0.0980392 0.0980392 1</specular>
+      <direction>0 0 -1</direction>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+      <spot>
+        <inner_angle>0.6</inner_angle>
+        <outer_angle>1</outer_angle>
+        <falloff>1</falloff>
+      </spot>
+    </light>
   </world>
 </sdf>
