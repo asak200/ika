@@ -1,0 +1,11 @@
+these are some notes for future:
+
+update new section:
+- when you open new amcl, change the "map" parameter / argument
+- let the initial poition depending on the absolute position
+- 
+### figure out when the section is completed
+
+
+
+
