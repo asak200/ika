@@ -11,18 +11,20 @@ def generate_launch_description():
             parameters=[{
                 "target_frame": "camera_link",
                 "transform_tolerance": 0.01,
-                "min_height": 0.,
+                "min_height": -0.9,
                 "max_height": .9,
                 "angle_min": -0.76,
                 "angle_max": 0.76,
-                "angle_increment": 0.00316,
+                "angle_increment": 0.002371,
+                # "angle_increment": 0.00316,
                 "scan_time": 0.1,
                 "range_min": 0.1,
-                "range_max": 8.0,
+                "range_max": 8.,
                 "use_inf": True,
                 "inf_epsilon": 1.0
             }],
-            name='pointcloud_to_laserscan'
+            name='pointcloud_to_laserscan',
+            # arguments=['--ros-args', '--log-level', 'DEBUG'],
         )
     ld.add_action(ptcl_to_laser)
     return ld

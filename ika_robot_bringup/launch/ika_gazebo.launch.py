@@ -58,10 +58,6 @@ def generate_launch_description():
         package='ika_camera',
         executable='dummy_pclaud_listener',
     )
-    cmd_pub = Node(
-        package='ika_camera',
-        executable='cmd_pub',
-    )
 
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
@@ -75,7 +71,8 @@ def generate_launch_description():
         executable='spawn_entity.py', 
         arguments=['-entity', 'aa', 
                    '-topic', 'robot_description',
-                   '-x', '0', '-y', '0', '-z', '20',
+                   '-x', '12', '-y', '-8.5', '-z', '1.5',
+                #    '-x', '10', '-y', '1', '-z', '1.5',
                    '-Y', '3.1416'
                    ],
         output='screen'
@@ -105,7 +102,6 @@ def generate_launch_description():
     ld.add_action(robot_localization)
     # ld.add_action(depth_to_laser)
     # ld.add_action(dummy_pclaud_listener)
-    # ld.add_action(cmd_pub)
     ld.add_action(gazebo)
     ld.add_action(spawner)
     ld.add_action(rviz2)

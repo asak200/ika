@@ -12,10 +12,11 @@
         "/home/asak/ros2_ws/install/tutorial_interfaces/include/**",
         "/home/asak/ros2_ws/install/turtle_interfaces/include/**",
         "/home/asak/ros2_ws/install/new_interfaces/include/**",
-        "/opt/ros/humble/include/**",
         "/home/asak/ika/src/ika_robot_bringup/include/**",
         "/home/asak/ika/src/ika_robot_description/include/**",
-        "/usr/include/**"
+        "/home/asak/ika/src/pointcloud_to_laserscan/include/**",
+        "/usr/include/**",
+        "/opt/ros/humble/include/**"
       ],
       "name": "ROS",
       "intelliSenseMode": "gcc-x64",
