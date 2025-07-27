@@ -16,6 +16,7 @@ def generate_launch_description():
                 'frame_id': 'lidar_frame',
                 'inverted': False,
                 'angle_compensate': True,
+                'use_sim_time': True,
             }],
         ),
     ])
