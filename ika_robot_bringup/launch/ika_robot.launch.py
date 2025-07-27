@@ -78,19 +78,19 @@ def generate_launch_description():
         output='screen'
     )
 
-    if use_ros2_control:
-        diff_cont_spawner = Node(
-            package='controller_manager',
-            executable='spawner',
-            arguments=['diff_cont'],
-        )
-        joint_broad_spawner = Node(
-            package='controller_manager',
-            executable='spawner',
-            arguments=['joint_broad']
-        )
-        ld.add_action(diff_cont_spawner)
-        ld.add_action(joint_broad_spawner)
+    # if use_ros2_control:
+    #     diff_cont_spawner = Node(
+    #         package='controller_manager',
+    #         executable='spawner',
+    #         arguments=['diff_cont'],
+    #     )
+    #     joint_broad_spawner = Node(
+    #         package='controller_manager',
+    #         executable='spawner',
+    #         arguments=['joint_broad']
+    #     )
+        # ld.add_action(diff_cont_spawner)
+        # ld.add_action(joint_broad_spawner)
 
     rviz2 = Node(
         package='rviz2',
@@ -104,6 +104,6 @@ def generate_launch_description():
     ld.add_action(dummy_pclaud_listener)
     # ld.add_action(gazebo)
     # ld.add_action(spawner)
-    ld.add_action(rviz2)
+    # ld.add_action(rviz2)
 
     return ld

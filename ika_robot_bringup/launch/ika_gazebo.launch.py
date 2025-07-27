@@ -63,7 +63,7 @@ def generate_launch_description():
         PythonLaunchDescriptionSource(
             os.path.join(gazebo_pkg, 'launch', 'gazebo.launch.py')
         ),
-        # launch_arguments={'world': world}.items()
+        launch_arguments={'world': world}.items()
     )
 
     spawner = Node(
@@ -72,8 +72,8 @@ def generate_launch_description():
         arguments=['-entity', 'aa', 
                    '-topic', 'robot_description',
                 #    '-x', '12', '-y', '-8.5', '-z', '1.5',
-                #    '-x', '5', '-y', '1.5', '-z', '1.5',
-                #    '-Y', '3.1416'
+                   '-x', '5', '-y', '1.5', '-z', '1.5',
+                   '-Y', '3.1416'
                    ],
         output='screen'
     )
@@ -98,10 +98,10 @@ def generate_launch_description():
         arguments=['-d', rviz_config]
     )
 
-    # ld.add_action(robot_state_publisher)
-    # ld.add_action(robot_localization)
-    # ld.add_action(depth_to_laser)
-    # ld.add_action(dummy_pclaud_listener)
+    ld.add_action(robot_state_publisher)
+    ld.add_action(robot_localization)
+    ld.add_action(depth_to_laser)
+    ld.add_action(dummy_pclaud_listener)
     ld.add_action(gazebo)
     ld.add_action(spawner)
     ld.add_action(rviz2)
