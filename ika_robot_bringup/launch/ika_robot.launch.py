@@ -21,7 +21,7 @@ def generate_launch_description():
     robot_localization_param = os.path.join(get_package_share_directory('ika_robot_description'),
                                             'config', 'ekf.yaml')
 
-    gazebo_pkg = get_package_share_directory('gazebo_ros')
+    # gazebo_pkg = get_package_share_directory('gazebo_ros')
 
     world = os.path.join(get_package_share_directory('ika_robot_description'),
                          'worlds', 'new_section6.world')
@@ -104,6 +104,6 @@ def generate_launch_description():
     ld.add_action(dummy_pclaud_listener)
     # ld.add_action(gazebo)
     # ld.add_action(spawner)
-    # ld.add_action(rviz2)
+    ld.add_action(rviz2)
 
     return ld

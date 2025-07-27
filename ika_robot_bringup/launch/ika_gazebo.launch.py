@@ -98,10 +98,10 @@ def generate_launch_description():
         arguments=['-d', rviz_config]
     )
 
-    ld.add_action(robot_state_publisher)
-    ld.add_action(robot_localization)
-    ld.add_action(depth_to_laser)
-    ld.add_action(dummy_pclaud_listener)
+    # ld.add_action(robot_state_publisher)
+    # ld.add_action(robot_localization)
+    # ld.add_action(depth_to_laser)
+    # ld.add_action(dummy_pclaud_listener)
     ld.add_action(gazebo)
     ld.add_action(spawner)
     ld.add_action(rviz2)
