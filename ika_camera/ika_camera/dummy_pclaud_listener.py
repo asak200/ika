@@ -23,10 +23,10 @@ class MyNode(Node):
         )
         self.laser_len = []
 
-        listener_ = self.create_subscription(LaserScan, 'camera_scan', self.laser_callback, qos_profile)
+        # listener_ = self.create_subscription(LaserScan, 'camera_scan', self.laser_callback, qos_profile)
         self.listener_ = self.create_subscription(Twist, 'cmd_vel', self.cmd_vel_callback, 10)
-        listener_2 = self.create_subscription(PointCloud2, 'camera/points', self.points_callback, 10)
-        listener_3 = self.create_subscription(Imu, 'imu', self.imu_callback, 10)
+        # listener_2 = self.create_subscription(PointCloud2, 'camera/points', self.points_callback, 10)
+        # listener_3 = self.create_subscription(Imu, 'imu', self.imu_callback, 10)
         self.pub_ = self.create_publisher(Twist, 'diff_cont/cmd_vel_unstamped', 10)
 
         # self.create_timer(0.1, self.timer_callback)
@@ -54,7 +54,8 @@ class MyNode(Node):
         pass
 
     def timer_callback(self):
-        self.get_logger().info(str(len(self.laser_len)))
+        # self.get_logger().info(str(len(self.laser_len)))
+        pass
         
 
 

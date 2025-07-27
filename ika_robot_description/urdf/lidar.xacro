@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+    <xacro:property name='wheel_len' value='0.04'/>
+    <xacro:property name='wheel_rad' value='0.05'/>
+
+    <joint name="lidar_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="lidar_frame"/>
+        <origin xyz="0.6 0 0.4" rpy="0 0 0"/>
+    </joint>
+
+    <link name='lidar_frame'>
+        <visual>
+            <geometry>
+                <cylinder length="${wheel_len}" radius="${wheel_rad}"/>
+            </geometry>
+            <material name='red'/>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder length="${wheel_len}" radius="${wheel_rad}"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_cylinder mass='0.1' length="${wheel_len}" radius="${wheel_rad}">
+            <origin xyz='0 0 0' rpy='0 0 0'/>
+        </xacro:inertial_cylinder>
+    </link>
+    <gazebo reference='lidar_frame'>
+        <material>Gazebo/Red</material>
+    </gazebo>
+
+    <gazebo reference='lidar_frame'>
+        <sensor name="laser" type="ray">
+            <pose> 0 0 0 0 0 0 </pose>
+            <visualize>false</visualize>
+            <update_rate>10</update_rate>
+            <ray> 
+                <scan>
+                    <horizontal>
+                        <samples>360</samples>
+                        <min_angle>-3.14</min_angle>
+                        <max_angle>3.14</max_angle>
+                    </horizontal>
+                </scan>
+                <range>
+                    <min>0.15</min>
+                    <max>8</max>
+                </range>
+            </ray>
+            <plugin name="laser_controller" filename="libgazebo_ros_ray_sensor.so">
+                <ros>
+                    <argument>~/out:=scan</argument>
+                </ros>
+                <frame_name>lidar_frame</frame_name>
+                <output_type>sensor_msgs/LaserScan</output_type>
+            </plugin>
+        </sensor>
+    </gazebo>
+
+</robot>

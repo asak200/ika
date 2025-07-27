@@ -18,11 +18,11 @@ ekf_node:
                    false, false, false,  # Roll', Pitch', Yaw'
                    false, false, false]  # Acceleration
 
-    imu0: imu
-    imu0_config: [false, false, false,
-                  false, false, false,
-                  false, false, false,
-                  false, false, true,
-                  false, false, false]
-    imu0_differential: true
-    imu0_remove_gravitational_acceleration: true
+    # imu0: imu
+    # imu0_config: [false, false, false,
+    #               false, false, false,
+    #               false, false, false,
+    #               false, false, true,
+    #               false, false, false]
+    # imu0_differential: true
+    # imu0_remove_gravitational_acceleration: true
