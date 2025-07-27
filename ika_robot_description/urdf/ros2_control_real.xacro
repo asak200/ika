@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <ros2_control name="MobileBased" type="system">
+        <hardware>
+            <!-- <plugin>mock_components/GenericSystem</plugin> -->
+            <!-- <param name="calculate_dynamics">true</param> -->
+            <plugin>mobile_base_hw/MobileBasedHWInterface</plugin>
+            <param name="port_name">/dev/ttyUSB0</param>
+        </hardware>
+        
+        <joint name="left_wheel_joint_3">
+            <command_interface name="velocity" />
+            <state_interface name="velocity" />
+            <state_interface name="position" />
+        </joint>
+        <joint name="right_wheel_joint_3">
+            <command_interface name="velocity" />
+            <state_interface name="velocity" />
+            <state_interface name="position" />
+        </joint>
+        
+    </ros2_control>
+
+</robot>

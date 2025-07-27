@@ -22,9 +22,8 @@
                 <cylinder length="${wheel_len}" radius="${wheel_rad}"/>
             </geometry>
         </collision>
-        <xacro:inertial_cylinder mass='0.1' length="${wheel_len}" radius="${wheel_rad}">
-            <origin xyz='0 0 0' rpy='0 0 0'/>
-        </xacro:inertial_cylinder>
+        <xacro:cylinder_inertia m="0.3" r="${wheel_rad}" l = "${wheel_len}" 
+                                    xyz="0 0 0" rpy="0 0 0"/>
     </link>
     <gazebo reference='lidar_frame'>
         <material>Gazebo/Red</material>
