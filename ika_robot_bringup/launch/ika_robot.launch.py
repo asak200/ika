@@ -59,12 +59,12 @@ def generate_launch_description():
         executable='dummy_pclaud_listener',
     )
 
-    gazebo = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(
-            os.path.join(gazebo_pkg, 'launch', 'gazebo.launch.py')
-        ),
-        # launch_arguments={'world': world}.items()
-    )
+    # gazebo = IncludeLaunchDescription(
+    #     PythonLaunchDescriptionSource(
+    #         os.path.join(gazebo_pkg, 'launch', 'gazebo.launch.py')
+    #     ),
+    #     # launch_arguments={'world': world}.items()
+    # )
 
     spawner = Node(
         package='gazebo_ros',
